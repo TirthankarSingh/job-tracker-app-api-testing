@@ -11,7 +11,7 @@ def test_verify_public_status_endpoint():
     }
     """
 
-    url =  'http://localhost:3050/api/v1/public/status'
+    url = os.getenv("BASE_URL") + "/api/v1/public/status"
     response = requests.get(url)
     assert response.status_code == 200, f"Expected status code 200, but got {response.status_code}"
     
